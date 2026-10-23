@@ -78,6 +78,9 @@
   <dialog id="challengeDialog" class="modal"><form method="dialog" class="modal-close-form"><button class="modal-x" aria-label="Close">×</button></form><div class="modal-symbol">⌘</div><span class="pill pill-lime">5-MINUTE CHALLENGE</span><h2>Think like a developer</h2><p class="muted">Which language is commonly used to structure the content of a web page?</p><div class="quiz-options"><button class="quiz-option" data-answer="wrong">CSS</button><button class="quiz-option" data-answer="correct">HTML</button><button class="quiz-option" data-answer="wrong">SQL</button></div><p id="quizFeedback" class="quiz-feedback" aria-live="polite"></p><button class="button button-lime full-width hidden" id="finishChallenge">Collect 100 XP</button><p class="demo-note modal-note">Practice quiz only. Progress is stored locally on this device.</p></dialog>
   <dialog id="infoDialog" class="modal"><form method="dialog" class="modal-close-form"><button class="modal-x" aria-label="Close">×</button></form><div class="modal-symbol">✦</div><h2 id="infoTitle">SkillUp</h2><p id="infoText" class="muted"></p><button class="button button-primary full-width" id="closeInfo">Got it</button></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+ 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
   <script src="app.js"></script>
   <script>
     if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
