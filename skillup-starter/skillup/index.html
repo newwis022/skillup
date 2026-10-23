@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111126">
+  <meta name="description" content="SkillUp — learn something, share something, grow together.">
+  <title>SkillUp — Learn. Create. Connect.</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/skillup-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="SkillUp home"><span class="brand-mark">S<span>+</span></span><span>SkillUp</span></a>
+      <p class="side-label">YOUR SPACE</p>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="home"><span>⌂</span> Home</button>
+        <button class="nav-item" data-view="learn"><span>✦</span> Learn</button>
+        <button class="nav-item" data-view="creators"><span>▣</span> Creators</button>
+        <button class="nav-item" data-view="friends"><span>♧</span> Community</button>
+      </nav>
+      <div class="sidebar-card">
+        <div class="mini-orbit">✦</div>
+        <strong>Small steps.<br>Big skills.</strong>
+        <p>Five minutes today can change your tomorrow.</p>
+        <button class="button button-lime button-small" data-view="learn">Start learning</button>
+      </div>
+      <div class="sidebar-bottom"><span class="status-dot"></span> Prototype mode <span class="tiny-pill">DEMO</span></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-mark">S<span>+</span></span><strong>SkillUp</strong></div>
+        <div class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Search skills, creators, ideas..." aria-label="Search content"></div>
+        <div class="top-actions"><button class="icon-button" id="notifyButton" aria-label="Notifications">♧<i></i></button><button class="avatar avatar-me" aria-label="Demo profile">Y</button></div>
+      </header>
+
+      <section class="welcome-row">
+        <div><p class="eyebrow">FRIDAY, OCTOBER 23 · YOUR NEXT CHAPTER STARTS HERE</p><h1>Grow a little <span>every day.</span></h1><p class="muted">Learn new skills, share what you make, and grow together.</p></div>
+        <div class="streak-card"><div class="streak-icon">♨</div><div><strong id="streakCount">1 day</strong><span>learning streak</span></div><span class="streak-spark">✦</span></div>
+      </section>
+
+      <div class="content-grid">
+        <div class="feed-column">
+          <section class="daily-challenge panel">
+            <div class="challenge-art"><div class="art-ring ring-one"></div><div class="art-ring ring-two"></div><span class="art-spark">✦</span><span class="art-code">&lt;/&gt;</span></div>
+            <div class="challenge-copy"><div class="challenge-top"><span class="pill pill-lime">TODAY'S CHALLENGE</span><span class="duration">◷ 5 min</span></div><h2>Think like a developer</h2><p>One tiny coding concept. One step closer to building something real.</p><div class="challenge-bottom"><span class="xp">✦ 100 XP</span><button class="button button-lime" id="startChallenge">Take challenge <span>→</span></button></div></div>
+          </section>
+
+          <section class="composer panel">
+            <div class="avatar avatar-me">Y</div>
+            <div class="composer-main"><label for="postText" class="sr-only">Share what you are learning</label><textarea id="postText" rows="2" maxlength="500" placeholder="What are you learning or creating today?"></textarea><div class="composer-footer"><div class="composer-hints"><span>✦ Share your progress</span><span class="demo-note">Demo posts stay in this browser</span></div><button class="button button-primary" id="publishPost">Share post <span>↗</span></button></div></div>
+          </section>
+
+          <div class="feed-heading"><div><h2>Your community</h2><p class="muted">Fresh ideas from people who are growing.</p></div><div class="feed-filters"><button class="filter active" data-filter="all">For you</button><button class="filter" data-filter="following">Following</button></div></div>
+          <div id="feedList" class="feed-list" aria-live="polite"></div>
+          <div id="emptyState" class="empty-state hidden"><div>⌕</div><strong>No posts found</strong><p>Try another search or share the first post.</p></div>
+        </div>
+
+        <aside class="right-column">
+          <section class="panel side-panel progress-panel"><div class="panel-heading"><h3>Your progress</h3><span class="sparkle">✦</span></div><div class="level-row"><div class="level-badge">1</div><div><strong>Curious beginner</strong><p>Level 1 learner</p></div></div><div class="progress-track"><span id="xpProgress" style="width:18%"></span></div><div class="progress-meta"><span><b id="xpCount">180</b> / 1,000 XP</span><span id="xpPercent">18%</span></div><div class="stat-row"><div><span class="stat-icon green">✦</span><strong id="skillsDone">3</strong><small>Skills explored</small></div><div><span class="stat-icon purple">♨</span><strong id="streakStat">1</strong><small>Day streak</small></div></div></section>
+
+          <section class="panel side-panel people-panel"><div class="panel-heading"><h3>People to learn with</h3><button class="text-button" data-view="friends">See all</button></div><div id="suggestedPeople"></div></section>
+
+          <section class="panel side-panel skill-panel"><div class="panel-heading"><h3>Explore skills</h3><span class="sparkle">✦</span></div><button class="skill-row" data-skill="Coding"><span class="skill-emoji coding">⌘</span><span><strong>Coding</strong><small>Build the future</small></span><span class="skill-arrow">↗</span></button><button class="skill-row" data-skill="Design"><span class="skill-emoji design">◈</span><span><strong>Design</strong><small>Make ideas visual</small></span><span class="skill-arrow">↗</span></button><button class="skill-row" data-skill="Communication"><span class="skill-emoji communication">✉</span><span><strong>Communication</strong><small>Express yourself</small></span><span class="skill-arrow">↗</span></button><button class="skill-row" data-skill="Business"><span class="skill-emoji business">↗</span><span><strong>Business</strong><small>Turn ideas into action</small></span><span class="skill-arrow">↗</span></button></section>
+
+          <section class="creator-banner"><div class="banner-stars">✦ ✧ ✦</div><span class="pill pill-dark">CREATOR CORNER</span><h3>Make something.<br>Inspire someone.</h3><p>Share your projects and let your progress speak.</p><button class="button button-outline" id="creatorPostButton">Create a post <span>↗</span></button></section>
+        </aside>
+      </div>
+      <footer class="footer"><span>© SkillUp · Learn. Create. Connect.</span><span><a href="#about" id="aboutLink">About</a><a href="#safety" id="safetyLink">Community safety</a><span>Prototype · Not a live social network yet</span></span></footer>
+    </main>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation"><button class="active" data-view="home">⌂<small>Home</small></button><button data-view="learn">✦<small>Learn</small></button><button data-view="creators">▣<small>Creators</small></button><button data-view="friends">♧<small>Community</small></button></nav>
+
+  <dialog id="challengeDialog" class="modal"><form method="dialog" class="modal-close-form"><button class="modal-x" aria-label="Close">×</button></form><div class="modal-symbol">⌘</div><span class="pill pill-lime">5-MINUTE CHALLENGE</span><h2>Think like a developer</h2><p class="muted">Which language is commonly used to structure the content of a web page?</p><div class="quiz-options"><button class="quiz-option" data-answer="wrong">CSS</button><button class="quiz-option" data-answer="correct">HTML</button><button class="quiz-option" data-answer="wrong">SQL</button></div><p id="quizFeedback" class="quiz-feedback" aria-live="polite"></p><button class="button button-lime full-width hidden" id="finishChallenge">Collect 100 XP</button><p class="demo-note modal-note">Practice quiz only. Progress is stored locally on this device.</p></dialog>
+  <dialog id="infoDialog" class="modal"><form method="dialog" class="modal-close-form"><button class="modal-x" aria-label="Close">×</button></form><div class="modal-symbol">✦</div><h2 id="infoTitle">SkillUp</h2><p id="infoText" class="muted"></p><button class="button button-primary full-width" id="closeInfo">Got it</button></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+      window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js").catch(() => {}));
+    }
+  </script>
+</body>
+</html>
