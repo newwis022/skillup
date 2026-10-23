@@ -79,3 +79,15 @@ $("#closeInfo").addEventListener("click",()=>$("#infoDialog").close());
 $("#aboutLink").addEventListener("click",e=>{e.preventDefault();info("About SkillUp","SkillUp is a prototype concept for a global social learning and creator platform. This preview uses sample posts and local browser storage; it is not yet a live social network.");});
 $("#safetyLink").addEventListener("click",e=>{e.preventDefault();info("Community safety","This prototype does not have real accounts, reporting queues, or moderation. Before inviting real users, we must implement secure authentication, access rules, reporting, blocking, moderation, and privacy controls.");});
 renderFeed();renderPeople();
+
+
+const profileButton = document.querySelector("#profileButton");
+
+if (profileButton) {
+  profileButton.addEventListener("click", () => {
+    document.querySelector("#infoTitle").textContent = "Your Profile";
+    document.querySelector("#infoText").textContent =
+      "Welcome to your SkillUp profile! Your real account details will appear here after signup and login are connected.";
+    document.querySelector("#infoDialog").showModal();
+  });
+}
