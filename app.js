@@ -1,3 +1,6 @@
+const SUPABASE_URL = "https://odykudoibkiwdycptxik.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY =sb_publishable_3zuZicde5nwIuvTftxC3Kg_T_7kaoci;
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
 const $ = (selector, root=document) => root.querySelector(selector);
 const $$ = (selector, root=document) => [...root.querySelectorAll(selector)];
 const storageKey = "skillup-demo-v1";
