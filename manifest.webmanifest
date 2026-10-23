@@ -1,0 +1,13 @@
+{
+  "name": "SkillUp — Learn. Create. Connect.",
+  "short_name": "SkillUp",
+  "description": "Learn useful skills, share what you make, and grow together.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d0d1b",
+  "theme_color": "#111126",
+  "icons": [
+    {"src": "assets/skillup-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}
+  ]
+}
